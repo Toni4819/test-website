@@ -12,20 +12,25 @@ if (objet) {
     <div class="detail">
       <div class="left">
         <img src="${objet.image}" alt="${objet.nom}" />
+        <p class="prix">${objet.prix}</p>
         <button class="btn">Acheter</button>
       </div>
+      <div class="separator"></div>
       <div class="right">
         <h2>${objet.nom}</h2>
         <p>${objet.description}</p>
-        <h3>Voir aussi</h3>
         <div class="suggestions">
-          ${suggestions.map(s => `
-            <div class="card">
-              <img src="${s.image}" alt="${s.nom}" />
-              <h4>${s.nom}</h4>
-              <a href="objet.html?id=${s.id}" class="btn">Voir</a>
-            </div>
-          `).join("")}
+          <h3>Voir aussi</h3>
+          <div class="suggestion-cards">
+            ${suggestions.map(s => `
+              <div class="card">
+                <img src="${s.image}" alt="${s.nom}" />
+                <h4>${s.nom}</h4>
+                <p class="prix">${s.prix}</p>
+                <a href="objet.html?id=${s.id}" class="btn">Voir</a>
+              </div>
+            `).join("")}
+          </div>
         </div>
       </div>
     </div>
