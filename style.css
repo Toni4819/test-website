@@ -80,3 +80,11 @@ header {
   gap: 1rem;
   flex-wrap: wrap;
 }
+
+.detail .left img {
+  max-width: 100%;
+  width: 300px;
+  height: auto;
+  margin-bottom: 1rem;
+  object-fit: contain;
+}
