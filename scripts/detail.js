@@ -19,19 +19,20 @@ if (objet) {
       <div class="right">
         <h2>${objet.nom}</h2>
         <p>${objet.description}</p>
-        <div class="suggestions">
-          <h3>Voir aussi</h3>
-          <div class="suggestion-cards">
-            ${suggestions.map(s => `
-              <div class="card">
-                <img src="${s.image}" alt="${s.nom}" />
-                <h4>${s.nom}</h4>
-                <p class="prix">${s.prix}</p>
-                <a href="objet.html?id=${s.id}" class="btn">Voir</a>
-              </div>
-            `).join("")}
+      </div>
+    </div>
+
+    <div class="suggestions-container">
+      <h3>Voir aussi</h3>
+      <div class="suggestion-cards">
+        ${suggestions.map(s => `
+          <div class="card">
+            <img src="${s.image}" alt="${s.nom}" />
+            <h4>${s.nom}</h4>
+            <p class="prix">${s.prix}</p>
+            <a href="objet.html?id=${s.id}" class="btn">Voir</a>
           </div>
-        </div>
+        `).join("")}
       </div>
     </div>
   `;
