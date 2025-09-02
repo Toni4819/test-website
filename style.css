@@ -10,33 +10,30 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* désactive tout scroll sur la page objet */
+html.no-scroll,
+body.no-scroll {
+  overflow: hidden;
 }
 
 body {
-  margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, #0a3d62, #1e8449);
   color: var(--text);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  animation: gradientShift 12s ease infinite alternate;
-}
-
-@keyframes gradientShift {
-  0% { background: linear-gradient(135deg, #0a3d62, #1e8449); }
-  100% { background: linear-gradient(135deg, #0652dd, #0a3d62); }
 }
 
 main {
   flex: 1;
 }
 
-html {
-  overflow-y: scroll;
-}
-
-/* 🧭 NAVBAR */
+/* NAVBAR */
 .navbar {
   background-color: var(--card-bg);
   padding: 1rem 2rem;
@@ -75,7 +72,7 @@ html {
   color: white;
 }
 
-/* 🖼️ GALLERY */
+/* GALLERY */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -130,7 +127,7 @@ html {
   margin: 0.5rem 0;
 }
 
-/* 🧾 DETAIL PAGE */
+/* DETAIL PAGE */
 .detail {
   display: grid;
   grid-template-columns: 350px 1fr;
@@ -138,6 +135,8 @@ html {
   padding: 2rem;
   align-items: start;
   position: relative;
+  max-height: calc(100vh - 160px); /* navbar + footer */
+  overflow: hidden;
 }
 
 .left {
@@ -150,11 +149,11 @@ html {
 .left img {
   width: 100%;
   max-width: 300px;
-  margin-bottom: 1rem;
   border-radius: 12px;
   box-shadow: 0 0 15px var(--shadow);
 }
 
+/* trait vertical */
 .separator {
   width: 1px;
   background-color: rgba(255, 255, 255, 0.2);
@@ -162,6 +161,12 @@ html {
   position: absolute;
   left: 360px;
   top: 20%;
+}
+
+.right {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 6rem; /* laisse de la place pour les suggestions */
 }
 
 .right h2 {
@@ -173,13 +178,15 @@ html {
 .right p {
   line-height: 1.6;
   margin-bottom: 2rem;
+  overflow-wrap: break-word;
 }
 
-/* 📌 SUGGESTIONS FIXÉES EN BAS */
+/* SUGGESTIONS ancrées */
 .suggestions {
   position: absolute;
-  bottom: 2rem;
+  bottom: 0;
   width: 100%;
+  padding-bottom: 1rem;
 }
 
 .suggestions h3 {
@@ -193,11 +200,7 @@ html {
   gap: 1rem;
 }
 
-.card img {
-  border-radius: 12px;
-}
-
-/* 🔘 BUTTONS */
+/* BUTTONS */
 .btn {
   padding: 0.6rem 1.2rem;
   background: linear-gradient(135deg, var(--accent), var(--accent-alt));
@@ -215,7 +218,7 @@ html {
   box-shadow: 0 6px 15px var(--accent-hover);
 }
 
-/* 🧱 FOOTER */
+/* FOOTER */
 footer {
   text-align: center;
   padding: 1rem;
@@ -225,7 +228,7 @@ footer {
   box-shadow: 0 -2px 5px var(--shadow);
 }
 
-/* ✨ ANIMATIONS */
+/* ANIMATIONS */
 @keyframes fadeIn {
   from {
     opacity: 0;
