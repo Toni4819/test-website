@@ -13,7 +13,7 @@ if (objet) {
       <div class="left">
         <img src="${objet.image}" alt="${objet.nom}" />
         <p class="prix">${objet.prix}</p>
-        <button class="btn">Acheter</button>
+        <a href="${objet.lien}" class="btn">Acheter</a>
       </div>
       <div class="separator"></div>
       <div class="right">
