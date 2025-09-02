@@ -7,7 +7,7 @@ objets3D.forEach(objet => {
   card.innerHTML = `
     <img src="${objet.image}" alt="${objet.nom}" />
     <h2>${objet.nom}</h2>
-    <a href="./?id=${objet.id}" class="btn">Plus de détails</a>
+    <a href="./objet?id=${objet.id}" class="btn">Plus de détails</a>
   `;
 
   gallery.appendChild(card);
