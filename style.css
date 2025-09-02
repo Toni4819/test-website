@@ -65,10 +65,11 @@ header {
 }
 
 .detail {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 2rem;
+  display: grid;
+  grid-template-columns: 300px 1fr;
   gap: 2rem;
+  padding: 2rem;
+  align-items: start;
 }
 
 .left, .right {
@@ -87,4 +88,21 @@ header {
   height: auto;
   margin-bottom: 1rem;
   object-fit: contain;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.left img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  object-fit: contain;
+}
+.right p {
+  line-height: 1.6;
+  margin-bottom: 2rem;
 }
